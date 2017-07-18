@@ -1,7 +1,7 @@
 <workunit extends="rpt_wtemplates/ReportController.xml" >
     <invokers>
-        <invoker folderid="/explorer/report/maguuma" action="init" caption="List of Farmers by Commodity" 
-            target="window" index="1001" role="REPORTS"/>
+        <invoker folderid="/explorer/report/maguuma" action="init" caption="Commodity Summary" 
+            target="window" index="1004" role="REPORTS"/>
     </invokers>
     <code>
 
@@ -17,12 +17,13 @@
         @Service('TagabukidMaguumaReportService') 
         def svc 
 
-        String title = 'List of Farmers by Commodity'
+        String title = 'Commodity Summary'
 
-        String reportName = 'tagabukid/maguuma/reports/list_of_farmersbycommodity.jasper';
+        String reportName = 'tagabukid/maguuma/reports/commoditysummaryperunit.jasper';
 
         void buildReportData(entity, asyncHandler){
-            svc.getFarmersListByCommodity(entity, asyncHandler)
+            entity.title = title;
+            svc.getCommoditySummary(entity, asyncHandler)
         }
 
         Map getParameters(){
@@ -30,29 +31,24 @@
             return data.parameters;
         }
         
-        def getCommodity(){
+         def getCommodity(){
             def c = svc.getCommodity();
             if(c) return c;
             return [];
         }
-
-        def getCommoditytype(){
+        
+         def getCommoditytype(){
             if (! entity.commodity)
                 return [];
             return svc.getCommodityType(entity.commodity?.objid);
         }
-        
-        def getCommoditysubtype(){
-            if (! entity.commoditytype)
-                return [];
-            return svc.getCommoditySubType(entity.commoditytype?.objid);
-        }
-        
+
         def getTs(){
             def ts = svc.getTenurialstatus();
             if(ts) return ts;
             return [];
         }
+       
         
         def formControl = [
             getFormControls: {
@@ -61,12 +57,10 @@
                     new FormControl( "combo", [captionWidth:100, caption:'Barangay', name:'entity.barangay', items:'barangays', expression:'#{item.name}', depends:'entity.lgu', dynamic:true, preferredSize:'0,21', emptyText:'ALL']),
                     new FormControl( "combo", [captionWidth:100, caption:'Commodity', name:'entity.commodity', items:'commodity', expression:'#{item.name}', preferredSize:'0,21', emptyText:'ALL']),
                     new FormControl( "combo", [captionWidth:100, caption:'Commodity Type', name:'entity.commoditytype', items:'commoditytype', expression:'#{item.name}', depends:'entity.commodity', dynamic:true, preferredSize:'0,21', emptyText:'ALL']),
-                    new FormControl( "combo", [captionWidth:100, caption:'Commodity Sub Type', name:'entity.commoditysubtype', items:'commoditysubtype', expression:'#{item.name}', depends:'entity.commoditytype', dynamic:true, preferredSize:'0,21', emptyText:'ALL']),
                     new FormControl( "combo", [captionWidth:100, caption:'Tenurial Status', name:'entity.ts', items:'ts', expression:'#{item.tenurialstatus}', preferredSize:'0,21', emptyText:'ALL']),
                     new FormControl( "decimal", [captionWidth:100, caption:'Qty From', name:'entity.from', preferredSize:'0,21']),
                     new FormControl( "decimal", [captionWidth:100, caption:'Qty To', name:'entity.to', preferredSize:'0,21']),
-                    new FormControl( "integer", [captionWidth:100, caption:'Limit', name:'entity.limit', preferredSize:'0,21']),
-                 
+                    new FormControl( "integer", [captionWidth:100, caption:'Top Size', name:'entity.topsize', preferredSize:'0,21']),
                 ]    
             },
         ] as FormPanelModel;

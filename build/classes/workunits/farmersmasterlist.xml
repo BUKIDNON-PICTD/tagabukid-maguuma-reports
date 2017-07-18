@@ -1,6 +1,6 @@
 <workunit extends="rpt_wtemplates/ReportController.xml" >
     <invokers>
-        <invoker folderid="/explorer/report/maguuma" action="init" caption="List of Farmers" 
+        <invoker folderid="/explorer/report/maguuma" action="init" caption="Farmers Master List" 
             target="window" index="1001" role="REPORTS"/>
     </invokers>
     <code>
@@ -17,7 +17,7 @@
         @Service('TagabukidMaguumaReportService') 
         def svc 
 
-        String title = 'List of Farmers'
+        String title = 'Farmers Master List'
 
         String reportName = 'tagabukid/maguuma/reports/masterlistoffarmers.jasper';
 

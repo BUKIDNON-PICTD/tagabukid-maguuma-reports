@@ -1,7 +1,7 @@
 <workunit extends="rpt_wtemplates/ReportController.xml" >
     <invokers>
-        <invoker folderid="/explorer/report/maguuma" action="init" caption="Commodity List" 
-            target="window" index="1002" role="REPORTS"/>
+<!--        <invoker folderid="/explorer/report/maguuma" action="init" caption="Commodity List" 
+            target="window" index="1002" role="REPORTS"/>-->
     </invokers>
     <code>
 

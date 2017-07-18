@@ -46,6 +46,8 @@
 	<parameter name="TENURIALSTATUS" isForPrompting="false" class="java.lang.String"/>
 	<parameter name="ORG" isForPrompting="false" class="java.lang.String"/>
 	<parameter name="TYPE" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="RANGE" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="TOPSIZE" isForPrompting="false" class="java.lang.String"/>
 
 	<field name="objid" class="java.lang.String"/>
 	<field name="addresstext" class="java.lang.String"/>
@@ -1566,7 +1568,7 @@
 					<reportElement
 						x="101"
 						y="81"
-						width="268"
+						width="134"
 						height="18"
 						forecolor="#000000"
 						backcolor="#FFFFFF"
@@ -1611,7 +1613,7 @@
 					<reportElement
 						x="101"
 						y="99"
-						width="268"
+						width="134"
 						height="18"
 						forecolor="#000000"
 						backcolor="#FFFFFF"
@@ -1626,7 +1628,7 @@
 					<reportElement
 						x="101"
 						y="117"
-						width="268"
+						width="134"
 						height="18"
 						forecolor="#000000"
 						backcolor="#FFFFFF"
@@ -1641,7 +1643,7 @@
 					<reportElement
 						x="101"
 						y="135"
-						width="268"
+						width="134"
 						height="18"
 						forecolor="#000000"
 						backcolor="#FFFFFF"
@@ -1656,7 +1658,7 @@
 					<reportElement
 						x="101"
 						y="153"
-						width="268"
+						width="134"
 						height="18"
 						forecolor="#000000"
 						backcolor="#FFFFFF"
@@ -1712,6 +1714,96 @@
 					</textElement>
 				<text><![CDATA[COMMODITY SUB TYPE]]></text>
 				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="336"
+						y="81"
+						width="268"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-43"/>
+					<box leftPadding="4" rightPadding="4" topPadding="2" bottomPadding="2"></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[':' + $P{TENURIALSTATUS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="235"
+						y="81"
+						width="101"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-50"/>
+					<box leftPadding="4" rightPadding="4" topPadding="2" bottomPadding="2"></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[TENURIAL STATUS]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="336"
+						y="99"
+						width="268"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-44"/>
+					<box leftPadding="4" rightPadding="4" topPadding="2" bottomPadding="2"></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[':' + $P{RANGE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="235"
+						y="99"
+						width="101"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-51"/>
+					<box leftPadding="4" rightPadding="4" topPadding="2" bottomPadding="2"></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[QTY RANGE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="235"
+						y="117"
+						width="101"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-52"/>
+					<box leftPadding="4" rightPadding="4" topPadding="2" bottomPadding="2"></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[TOP SIZE]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="336"
+						y="117"
+						width="268"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-45"/>
+					<box leftPadding="4" rightPadding="4" topPadding="2" bottomPadding="2"></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="8" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[':' + $P{TOPSIZE}]]></textFieldExpression>
+				</textField>
 			</band>
 		</title>
 		<pageHeader>
