@@ -1,6 +1,6 @@
 <workunit extends="rpt_wtemplates/ReportController.xml" >
     <invokers>
-        <invoker folderid="/explorer/report/maguuma" action="init" caption="Commodity Count Summary" 
+        <invoker folderid="/explorer/report/maguuma" action="init" caption="Commodity Summary Per Unit" 
             target="window" index="1004" role="REPORTS"/>
     </invokers>
     <code>
@@ -19,7 +19,7 @@
 
         String title = 'Commodity Summary'
 
-        String reportName = 'tagabukid/maguuma/reports/pagriitemsummary.jasper';
+        String reportName = 'tagabukid/maguuma/reports/commoditysummaryperunit.jasper';
 
         void buildReportData(entity, asyncHandler){
             svc.getCommoditySummary(entity, asyncHandler)

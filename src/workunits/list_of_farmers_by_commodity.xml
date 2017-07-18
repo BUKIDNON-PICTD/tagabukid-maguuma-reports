@@ -63,6 +63,9 @@
                     new FormControl( "combo", [captionWidth:100, caption:'Commodity Type', name:'entity.commoditytype', items:'commoditytype', expression:'#{item.name}', depends:'entity.commodity', dynamic:true, preferredSize:'0,21', emptyText:'ALL']),
                     new FormControl( "combo", [captionWidth:100, caption:'Commodity Sub Type', name:'entity.commoditysubtype', items:'commoditysubtype', expression:'#{item.name}', depends:'entity.commoditytype', dynamic:true, preferredSize:'0,21', emptyText:'ALL']),
                     new FormControl( "combo", [captionWidth:100, caption:'Tenurial Status', name:'entity.ts', items:'ts', expression:'#{item.tenurialstatus}', preferredSize:'0,21', emptyText:'ALL']),
+                    new FormControl( "decimal", [captionWidth:100, caption:'Qty From', name:'entity.from', preferredSize:'0,21']),
+                    new FormControl( "decimal", [captionWidth:100, caption:'Qty To', name:'entity.to', preferredSize:'0,21']),
+                    new FormControl( "integer", [captionWidth:100, caption:'Limit', name:'entity.limit', preferredSize:'0,21']),
                  
                 ]    
             },
