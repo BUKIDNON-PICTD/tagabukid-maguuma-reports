@@ -1,6 +1,6 @@
 <workunit extends="rpt_wtemplates/ReportController.xml" >
     <invokers>
-        <invoker folderid="/explorer/report/maguuma" action="init" caption="List of Farmers by Commodity" 
+        <invoker folderid="/explorer/report/maguuma" action="init" caption="List of Farmers by Commodity Crosstab" 
             target="window" index="1001" role="REPORTS"/>
     </invokers>
     <code>
@@ -17,9 +17,9 @@
         @Service('TagabukidMaguumaReportService') 
         def svc 
 
-        String title = 'List of Farmers by Commodity'
+        String title = 'List of Farmers by Commodity Crosstab'
 
-        String reportName = 'tagabukid/maguuma/reports/list_of_farmersbycommodity.jasper';
+        String reportName = 'tagabukid/maguuma/reports/farmerbycommoditysummaryperunit.jasper';
 
         void buildReportData(entity, asyncHandler){
             svc.getFarmersListByCommodity(entity, asyncHandler)
